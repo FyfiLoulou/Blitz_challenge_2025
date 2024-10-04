@@ -12,6 +12,9 @@ export class Bot {
     getNextMoves(gameMessage: TeamGameState): Action[] {
         const actions: Action[] = [];
 
+        console.log(gameMessage.yourCharacter.distances)
+        
+
         const possibleActions: Action[] = [
             { type: ActionType.MOVE_LEFT },
             { type: ActionType.MOVE_RIGHT },
