@@ -36,6 +36,10 @@ export class Bot {
         // Choose a random action from the possible actions.
         actions.push(randomlyChoose(possibleActions));
 
+        // we should use move_to as an action
+        // move_to takes a position as param
+        // how to find best position?
+
         // The bot can implement more sophisticated strategies for choosing actions.
         return actions;
     }
