@@ -9,11 +9,14 @@ export class Bot {
     /*
      * Here is where the magic happens, for now the moves are random. I bet you can do better ;)
      */
-    getNextMoves(gameMessage: TeamGameState): Action[] {
+    getNextMoves(gameState: TeamGameState): Action[] {
         const actions: Action[] = [];
-
-        console.log(gameMessage.yourCharacter.distances)
+        const mapDimension = getMapDimensions(gameState)
+        const map = gameState.map
+        const threats = gameState.threats
+        const me = gameState.yourCharacter
         
+        console.log(map.tiles)
 
         const possibleActions: Action[] = [
             { type: ActionType.MOVE_LEFT },
@@ -31,4 +34,8 @@ export class Bot {
 
 function randomlyChoose<T>(arr: T[]): T {
     return arr[Math.floor(arr.length * Math.random())];
+}
+
+const getMapDimensions = (gameState: TeamGameState) => {
+    return gameState.map.height * gameState.map.width
 }
