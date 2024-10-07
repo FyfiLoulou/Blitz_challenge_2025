@@ -1,4 +1,4 @@
-import {Action, ActionType, GameMap, Position, TeamGameState, Threat, TileType} from './GameInterface';
+import { Action, ActionType, GameMap, Position, TeamGameState, Threat, TileType } from './GameInterface';
 
 /**
  * Bot Class
@@ -27,10 +27,10 @@ export class Bot {
 
         // Possible actions the bot can take.
         const possibleActions: Action[] = [
-            {type: ActionType.MOVE_LEFT},
-            {type: ActionType.MOVE_RIGHT},
-            {type: ActionType.MOVE_UP},
-            {type: ActionType.MOVE_DOWN},
+            { type: ActionType.MOVE_LEFT },
+            { type: ActionType.MOVE_RIGHT },
+            { type: ActionType.MOVE_UP },
+            { type: ActionType.MOVE_DOWN },
         ];
 
         // Choose a random action from the possible actions.
