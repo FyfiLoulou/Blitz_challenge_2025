@@ -1,4 +1,4 @@
-import { Action, ActionType, GameMap, Position, TeamGameState, Threat, TileType } from './GameInterface';
+import {Action, ActionType, GameMap, Position, TeamGameState, Threat, TileType} from './GameInterface';
 
 /**
  * Bot Class
@@ -11,7 +11,7 @@ export class Bot {
         // This constructor initializes any necessary variables for the bot's operation.
     }
 
-    /*
+    /**
      * Determines the next moves for the bot based on the current game state.
      * Currently, the moves are chosen randomly, but this can be improved with better logic.
      *
@@ -27,10 +27,10 @@ export class Bot {
 
         // Possible actions the bot can take.
         const possibleActions: Action[] = [
-            { type: ActionType.MOVE_LEFT },
-            { type: ActionType.MOVE_RIGHT },
-            { type: ActionType.MOVE_UP },
-            { type: ActionType.MOVE_DOWN },
+            {type: ActionType.MOVE_LEFT},
+            {type: ActionType.MOVE_RIGHT},
+            {type: ActionType.MOVE_UP},
+            {type: ActionType.MOVE_DOWN},
         ];
 
         // Choose a random action from the possible actions.
