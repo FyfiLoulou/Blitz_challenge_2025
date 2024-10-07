@@ -38,7 +38,7 @@ export class Bot {
 
         // we should use move_to as an action
         // move_to takes a position as param
-        // how to find best position?
+        // how to find best position to move_to?
 
         // The bot can implement more sophisticated strategies for choosing actions.
         return actions;
