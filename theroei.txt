@@ -1,0 +1,9 @@
+bull = change direction quand touche un mur
+shark = y nous fonce dessus
+hawk = commence a bouger au tick 35 ou qui te vois?, pt hardcodé selon la map? ou qui te vois sur son chemin hardcodé?
+goldfish = bouge random
+owl = y nous fonce dessus??? pas que, live span de 85 ticks?
+deer = fonce dessus avec le 2e chemin le plus court?
+
+=> les ennemis bougent à chaque 5 ticks sauf hawk
+=> on peut se tp à travers d'eux si on bouge dans la direction opposé et eux bouge dans notre direction

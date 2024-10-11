@@ -20,10 +20,17 @@ export class Bot {
      */
     getNextMoves(gameState: TeamGameState): Action[] {
         const actions: Action[] = [];
-        const mapDimension = getMapDimensions(gameState.map);
-        const map = gameState.map.tiles;
-        const threatsPos = getThreatsPos(gameState.threats);
         const me = gameState.yourCharacter.position;
+        let tick = gameState.currentTickNumber
+        let enemyMoveTicksRemaining = tick % 5
+        console.log(getMapDimensions(gameState.map))
+
+        if (tick == 1) {
+            console.log(gameState.threats)
+        }
+        //console.log(gameState.threats[0].position)
+
+        //console.log(getNeighborTiles(me, gameState.map.tiles))
 
         // Possible actions the bot can take.
         const possibleActions: Action[] = [
@@ -36,11 +43,6 @@ export class Bot {
         // Choose a random action from the possible actions.
         actions.push(randomlyChoose(possibleActions));
 
-        // we should use move_to as an action
-        // move_to takes a position as param
-        // how to find best position to move_to?
-
-        // The bot can implement more sophisticated strategies for choosing actions.
         return actions;
     }
 }
@@ -87,14 +89,8 @@ const getThreatsPos = (threats: Threat[]): Position[] => {
  * @param danger - The distance threshold for considering a threat to be near.
  * @returns True if any threat is within the danger distance, otherwise false.
  */
-const isThreatsNear = (threats: Threat[], pos: Position, danger: number): boolean => {
-    let retVal = false;
-    threats.forEach(t => {
-        if (getDist(pos, t.position) < danger) {
-            retVal = true;
-        }
-    });
-    return retVal;
+const getThreatsNear = (threats: Threat[], pos: Position): Threat[] => {
+    return threats.sort((t1, t2) => getDist(t1.position, pos) - getDist(t2.position, pos))
 }
 
 /**
@@ -127,4 +123,13 @@ const closest = (p: Position, tPos: Position[]): Position | null => {
         }
     });
     return c;
+}
+
+const getNeighborTiles = (p: Position, m) => {
+    let retVal = []
+    retVal[0] = [m[p.x], m[p.y + 1]] //up
+    retVal[1] = [m[p.x], m[p.y - 1]] //down
+    retVal[2] = [m[p.x + 1], m[p.y]] // right
+    retVal[3] = [m[p.x - 1], m[p.y]] //left
+    return retVal
 }

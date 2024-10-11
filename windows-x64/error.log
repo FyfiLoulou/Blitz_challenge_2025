@@ -1,4 +1,0 @@
-[ERROR] 2024-10-04T19:40:53.750Z: An error occurred while playing the game. Max wait time for the game to start of 500000 ms exceeded but no teams were registered. Error: Max wait time for the game to start of 500000 ms exceeded but no teams were registered.
-    at Timeout._onTimeout (C:\snapshot\blitz-2025\engine\dist\engine.js)
-    at listOnTimeout (node:internal/timers:564:17)
-    at process.processTimers (node:internal/timers:507:7)
